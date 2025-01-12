@@ -16,6 +16,8 @@ body {
     font-family: 'Roboto', Arial, sans-serif;
     background: url('./projeto/assets/hello-kitty-fundo.png') no-repeat center center fixed;
     background-size: cover;
+    background-position: center center; /* Garante que a imagem de fundo seja centralizada */
+    background-attachment: fixed; /* Mantém a imagem fixa enquanto rola a página */
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -119,4 +121,62 @@ footer {
     margin-top: 30px;
     font-size: 14px;
     color: #bbb;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 35px;
+    }
+
+    .card {
+        width: 80%; /* Faz o card ocupar a maior parte da largura */
+    }
+
+    .card .profile-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .card h2 {
+        font-size: 1.2rem;
+    }
+
+    .card p {
+        font-size: 1rem;
+    }
+
+    .card .instagram-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    .card .profile-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .card h2 {
+        font-size: 1rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    .card .instagram-button {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
 }

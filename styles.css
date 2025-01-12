@@ -14,7 +14,7 @@ html {
 /* Estilos gerais do body */
 body {
     font-family: 'Roboto', Arial, sans-serif;
-    background: url('./projeto/assets/hello-kitty-fundo.png') no-repeat center center fixed;
+    background: url('https://media.discordapp.net/attachments/1316228294458212425/1327654973969797130/10_New_Hello_Kitty_Pink_Background_FULL_HD_19201080_For_PC_Desktop.jpg?ex=67852c0c&is=6783da8c&hm=6452f06afacbbc8f9983c52b981fe0718f0f5a29232b8d045eb0d941e466df11&=&format=webp') no-repeat center center fixed;
     background-size: cover;
     background-position: center center; /* Garante que a imagem de fundo seja centralizada */
     background-attachment: fixed; /* Mantém a imagem fixa enquanto rola a página */

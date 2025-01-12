@@ -40,6 +40,7 @@
             position: relative;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
+            z-index: 10;
         }
 
         .card .card-bg {
@@ -126,6 +127,7 @@
             height: 30px;
             animation: fall 10s linear infinite;
             pointer-events: none;
+            z-index: 5;
         }
 
         @keyframes fall {
@@ -146,19 +148,69 @@
             clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
             animation-duration: 12s;
         }
+
+        /* Responsividade para dispositivos menores */
+        @media (max-width: 768px) {
+            .cards-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .card {
+                width: 80%;
+                max-width: 350px;
+                padding: 15px;
+            }
+
+            .card h2 {
+                font-size: 1.5rem;
+            }
+
+            .card .profile-image {
+                width: 100px;
+                height: 100px;
+            }
+
+            .instagram-button {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                width: 90%;
+                max-width: 320px;
+            }
+
+            .card .profile-image {
+                width: 90px;
+                height: 90px;
+            }
+
+            .card h2 {
+                font-size: 1.2rem;
+            }
+
+            .instagram-button {
+                font-size: 0.8rem;
+                padding: 6px 14px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="cards-container">
         <!-- Card 1 -->
         <div class="card">
-            <img class="card-bg" src="https://via.placeholder.com/300x400/ff79c6/ffffff" alt=".">
-            <img class="hello-kitty" src="https://media.discordapp.net/attachments/1316228294458212425/1327534615950528512/Hello_kitty_face.png?ex=67836a74&is=678218f4&hm=09eb0342ce642d2d32c345d5ecc40e68396697e544d5df14e74bc55cecd70de5&=&format=webp&quality=lossless&width=676&height=676" alt="hello kitty">
+            <img class="card-bg" src="https://via.placeholder.com/300x400/ff79c6/ffffff" alt="ily">
+            <img class="hello-kitty" src="https://media.discordapp.net/attachments/1316228294458212425/1327534615950528512/Hello_kitty_face.png?ex=67836a74&is=678218f4&hm=09eb0342ce642d2d32c345d5ecc40e68396697e544d5df14e74bc55cecd70de5&=&format=webp&quality=lossless&width=676&height=676" alt="Hello Kitty">
             <img class="profile-image" src="https://cdn.discordapp.com/avatars/1134199786896109568/9d8822db0e7a219a5fbbf078ee0cdc39.webp?size=2048" alt="Foto de perfil">
             <h2>pr1nce</h2>
             <div class="icons-container">
-                <img class="icon" src="https://media.discordapp.net/attachments/1316228294458212425/1327536873358360607/nitro_subscriber.png?ex=67836c8f&is=67821b0f&hm=4ea8657c98c2328502a95eeb0207af77681ae1304ee422b3684cdbccf62defdd&=&format=webp&quality=lossless" alt="Ícone">
-                <img class="icon" src="https://media.discordapp.net/attachments/1316228294458212425/1327504407423877213/pr1nce.png?ex=67834e52&is=6781fcd2&hm=63eb9b95bb8fe5aa5c7623662b552864ac968f5532cf44ca08441b1db24be999&=&format=webp&quality=lossless" alt="Ícone">
+                <img class="icon" src="https://media.discordapp.net/attachments/1316228294458212425/1327536873358360607/nitro_subscriber.png?ex=67836c8f&is=67821b0f&hm=4ea8657c98c2328502a95eeb0207af77681ae1304ee422b3684cdbccf62defdd&=&format=webp&quality=lossless" alt="Ícone de Nitro">
+                <img class="icon" src="https://media.discordapp.net/attachments/1316228294458212425/1327504407423877213/pr1nce.png?ex=67834e52&is=6781fcd2&hm=63eb9b95bb8fe5aa5c7623662b552864ac968f5532cf44ca08441b1db24be999&=&format=webp&quality=lossless" alt="Ícone do pr1nce">
             </div>
             <button class="instagram-button" onclick="window.open('https://www.instagram.com/pr1ncecopata/', '_blank')">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Ícone do Instagram">
@@ -168,13 +220,13 @@
 
         <!-- Card 2 -->
         <div class="card">
-            <img class="card-bg" src="https://via.placeholder.com/300x400/f3a4d4/ffffff" alt=".">
+            <img class="card-bg" src="https://via.placeholder.com/300x400/f3a4d4/ffffff" alt="ily">
             <img class="hello-kitty" src="https://media.discordapp.net/attachments/1316228294458212425/1327534615950528512/Hello_kitty_face.png?ex=67836a74&is=678218f4&hm=09eb0342ce642d2d32c345d5ecc40e68396697e544d5df14e74bc55cecd70de5&=&format=webp&quality=lossless&width=676&height=676" alt="Hello Kitty">
             <img class="profile-image" src="https://cdn.discordapp.com/avatars/1134199786896109568/9d8822db0e7a219a5fbbf078ee0cdc39.webp?size=2048" alt="Foto de perfil">
             <h2>bibi</h2>
             <div class="icons-container">
-                <img class="icon" src="https://media.discordapp.net/attachments/1316228294458212425/1327536873358360607/nitro_subscriber.png?ex=67836c8f&is=67821b0f&hm=4ea8657c98c2328502a95eeb0207af77681ae1304ee422b3684cdbccf62defdd&=&format=webp&quality=lossless" alt="Ícone">
-                <img class="icon" src="https://media.discordapp.net/attachments/1316228294458212425/1327504407167766599/bibi.png?ex=67834e52&is=6781fcd2&hm=583e13698028695977cb95b3312f4342093335b95133217a477bef8779cdf2bb&=&format=webp&quality=lossless" alt="Ícone">
+                <img class="icon" src="https://media.discordapp.net/attachments/1316228294458212425/1327536873358360607/nitro_subscriber.png?ex=67836c8f&is=67821b0f&hm=4ea8657c98c2328502a95eeb0207af77681ae1304ee422b3684cdbccf62defdd&=&format=webp&quality=lossless" alt="Ícone de Nitro">
+                <img class="icon" src="https://media.discordapp.net/attachments/1316228294458212425/1327504407167766599/bibi.png?ex=67834e52&is=6781fcd2&hm=583e13698028695977cb95b3312f4342093335b95133217a477bef8779cdf2bb&=&format=webp&quality=lossless" alt="Ícone de bibi">
             </div>
             <button class="instagram-button" onclick="window.open('https://www.instagram.com/lwanafy/', '_blank')">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Ícone do Instagram">
@@ -185,11 +237,11 @@
 
     <script>
         const emojis = [
-            "https://media.discordapp.net/attachments/1316228294458212425/1327650644814725130/heart_that_ly.png?ex=6783d684&is=67828504&hm=76696ab96bd6c30f6725545b2913a63ede914d3c5b6ce3a852d90ae546e8b8aa&=&format=webp&quality=lossless",
+            "https://media.discordapp.net/attachments/1316228294458212425/1327534615950528512/Hello_kitty_face.png?ex=6784bbf4&is=67836a74&hm=6298d8126cb39408a7ef18f3a0076c1f3668b336e37b16c0b1fda3c7cd6d87a4&=&format=webp&quality=lossless&width=676&height=676",
             "https://media.discordapp.net/attachments/1316228294458212425/1327650645251194902/hellokitty_flushed.png?ex=6783d684&is=67828504&hm=3356922603730cc97ad32c3b98aa3ae95878dafa5fbc3026c8c47bab798b8ff6&=&format=webp&quality=lossless",
-            "https://media.discordapp.net/attachments/1316228294458212425/1327650645896990822/HelloKittyBow.gif?ex=6783d684&is=67828504&hm=7a63f80e2376a0fd5a44e11890b9409e85e7407882a7c4fd7e10972f238a799c&=",
-            "https://media.discordapp.net/attachments/1316228294458212425/1327650643845976096/SanrioHearts.gif?ex=6783d684&is=67828504&hm=18872156a8b9016bcb3cec4aad71803f9ea8746846c12cdd69914d8c09d6d7c2&=",
-            "https://media.discordapp.net/attachments/1316228294458212425/1327650646987378802/hellokitty_hearteyes.png?ex=6783d684&is=67828504&hm=524fb4d8eb6fb3a1fa467a7a1e363f4e63bfef5dcdbd1ed052c610b238ae2a6d&=&format=webp&quality=lossless"
+            "https://media.discordapp.net/attachments/1316228294458212425/1327650644814725130/heart_that_ly.png?ex=67852804&is=6783d684&hm=0bb065cadf32c4ecc8b5e4d30d972cdbee962e1fe354d3b632e12525134e9e9c&=&format=webp&quality=lossless",
+            "https://media.discordapp.net/attachments/1316228294458212425/1327650646987378802/hellokitty_hearteyes.png?ex=67852804&is=6783d684&hm=c5ec0b3d53d91feefc828c2cdb5ba56b81e0c1d8f06e8c0ec3920398ac4d7c0e&=&format=webp&quality=lossless",
+            "https://media.discordapp.net/attachments/1316228294458212425/1327650644814725130/heart_that_ly.png?ex=67852804&is=6783d684&hm=0bb065cadf32c4ecc8b5e4d30d972cdbee962e1fe354d3b632e12525134e9e9c&=&format=webp&quality=lossless"
         ];
 
         function createFallingItem() {
@@ -222,8 +274,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-

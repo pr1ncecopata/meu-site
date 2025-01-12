@@ -91,11 +91,11 @@
 <body>
     <div class="container" id="content">
         <h1>by pr1nce</h1>
-        <a href="cards.html" class="btn" onclick="applyTheme(event)">Clique aqui para ver</a>
+        <a href="#" class="btn" onclick="applyTheme(event)">Clique aqui para ver</a>
     </div>
 
-    <!-- Som de clique (arquivo no seu PC) -->
-    <audio id="click-sound" src="assets/audio/som suave.wav" preload="auto"></audio>
+    <!-- Áudio de clique -->
+    <audio id="click-sound" src="./projeto/assets/somsuave.mp3"></audio>
 
     <script>
         // Função para criar borbulhas na posição do mouse
@@ -124,9 +124,13 @@
             content.classList.add('hidden'); // Suaviza o desaparecimento
             document.body.classList.add('hello-kitty-theme');
 
-            // Tocar som de clique
-            document.getElementById('click-sound').play();
+            // Acessar o áudio e tocar
+            const clickSound = document.getElementById('click-sound');
+            clickSound.play().catch(error => {
+                console.error("Erro ao tentar tocar o áudio:", error);
+            });
 
+            // Redirecionar para outra página após o efeito de transição
             setTimeout(() => {
                 window.location.href = "cards.html"; // Redireciona após a transição
             }, 2000); // Tempo para concluir a animação
@@ -134,3 +138,4 @@
     </script>
 </body>
 </html>
+<audio id="click-sound" src="assets/audio/Incondicional - Luan Santana.mp3" autoplay loop></audio>

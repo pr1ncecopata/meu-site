@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cards - Tema Hello Kitty</title>
+    <title>Página Inicial</title>
     <style>
+        /* Reset básico */
         * {
             margin: 0;
             padding: 0;
@@ -12,214 +13,140 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-image: url('https://media.discordapp.net/attachments/1316228294458212425/1327654973969797130/10_New_Hello_Kitty_Pink_Background_FULL_HD_19201080_For_PC_Desktop.jpg?ex=6783da8c&is=6782890c&hm=2037db7e5ed749b12ff4b66ea0df04765b97db5b2c18863451f44c160b596054&=&format=webp');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            overflow: hidden;
-        }
-
-        .cards-container {
+            font-family: 'Comic Sans MS', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffe4e1, #ffc0cb);
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 50px;
-        }
-
-        .card {
-            width: 300px;
-            border-radius: 20px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-            position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
+            transition: background 2s ease, color 2s ease;
         }
 
-        .card .card-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            object-fit: cover;
-            border-radius: 20px;
+        body.hello-kitty-theme {
+            background: linear-gradient(135deg, #ffccff, #ff99cc);
         }
 
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.3);
+        .container {
+            text-align: center;
+            transition: opacity 1.5s ease;
         }
 
-        .card .hello-kitty {
-            width: 50px;
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+        .container.hidden {
+            opacity: 0;
         }
 
-        .card .profile-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 5px solid #fff;
-            margin-top: 30px;
-            object-fit: cover;
-        }
-
-        .card h2 {
-            font-size: 2rem;
+        h1 {
             color: #fff;
-            margin: 20px 0;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: 3rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px #ff69b4;
+            transition: transform 1.5s ease;
         }
 
-        .card .icons-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin: 15px 0;
-        }
-
-        .card .icon {
-            width: 30px;
-            height: 30px;
-        }
-
-        .instagram-button {
-            padding: 10px 20px;
-            background-color: #f3a4d4;
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.5rem;
             color: #fff;
-            border: none;
-            border-radius: 10px;
+            background-color: rgba(255, 182, 193, 0.7);
+            border: 2px solid #fff;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: transform 0.3s, background-color 0.3s;
+            transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        .instagram-button img {
-            width: 20px;
-        }
-
-        .instagram-button:hover {
-            background-color: #d381b8;
+        .btn:hover {
             transform: scale(1.1);
+            background-color: rgba(255, 192, 203, 0.9);
+            border-color: rgba(255, 255, 255, 0.8);
         }
 
-        /* Efeito de emojis caindo */
-        .falling-item {
+        /* Efeito das borbulhas */
+        .bubble {
             position: absolute;
-            width: 30px;
-            height: 30px;
-            animation: fall 10s linear infinite;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
             pointer-events: none;
+            animation: bubble-animation 4s infinite ease-in-out;
+            box-shadow: 0 4px 8px rgba(255, 105, 180, 0.4);
         }
 
-        @keyframes fall {
+        @keyframes bubble-animation {
             0% {
-                transform: translateY(-100px) rotate(0deg);
+                transform: scale(0.3) translateY(0);
                 opacity: 1;
             }
+            50% {
+                opacity: 0.7;
+            }
             100% {
-                transform: translateY(100vh) rotate(360deg);
+                transform: scale(1.2) translateY(-300px);
                 opacity: 0;
             }
-        }
-
-        .falling-item.star {
-            width: 15px;
-            height: 15px;
-            background-color: #fff;
-            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-            animation-duration: 12s;
         }
     </style>
 </head>
 <body>
-    <div class="cards-container">
-        <!-- Card 1 -->
-        <div class="card">
-            <img class="card-bg" src="https://via.placeholder.com/300x400/ff79c6/ffffff" alt=".">
-            <img class="hello-kitty" src="https://media.discordapp.net/attachments/1316228294458212425/1327534615950528512/Hello_kitty_face.png?ex=67836a74&is=678218f4&hm=09eb0342ce642d2d32c345d5ecc40e68396697e544d5df14e74bc55cecd70de5&=&format=webp&quality=lossless&width=676&height=676" alt="hello kitty">
-            <img class="profile-image" src="https://cdn.discordapp.com/avatars/1134199786896109568/9d8822db0e7a219a5fbbf078ee0cdc39.webp?size=2048" alt="Foto de perfil">
-            <h2>pr1nce</h2>
-            <div class="icons-container">
-                <img class="icon" src="https://media.discordapp.net/attachments/1316228294458212425/1327536873358360607/nitro_subscriber.png?ex=67836c8f&is=67821b0f&hm=4ea8657c98c2328502a95eeb0207af77681ae1304ee422b3684cdbccf62defdd&=&format=webp&quality=lossless" alt="Ícone">
-                <img class="icon" src="https://media.discordapp.net/attachments/1316228294458212425/1327504407423877213/pr1nce.png?ex=67834e52&is=6781fcd2&hm=63eb9b95bb8fe5aa5c7623662b552864ac968f5532cf44ca08441b1db24be999&=&format=webp&quality=lossless" alt="Ícone">
-            </div>
-            <button class="instagram-button" onclick="window.open('https://www.instagram.com/pr1ncecopata/', '_blank')">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Ícone do Instagram">
-                Instagram
-            </button>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="card">
-            <img class="card-bg" src="https://via.placeholder.com/300x400/f3a4d4/ffffff" alt=".">
-            <img class="hello-kitty" src="https://media.discordapp.net/attachments/1316228294458212425/1327534615950528512/Hello_kitty_face.png?ex=67836a74&is=678218f4&hm=09eb0342ce642d2d32c345d5ecc40e68396697e544d5df14e74bc55cecd70de5&=&format=webp&quality=lossless&width=676&height=676" alt="Hello Kitty">
-            <img class="profile-image" src="https://cdn.discordapp.com/avatars/1134199786896109568/9d8822db0e7a219a5fbbf078ee0cdc39.webp?size=2048" alt="Foto de perfil">
-            <h2>bibi</h2>
-            <div class="icons-container">
-                <img class="icon" src="https://media.discordapp.net/attachments/1316228294458212425/1327536873358360607/nitro_subscriber.png?ex=67836c8f&is=67821b0f&hm=4ea8657c98c2328502a95eeb0207af77681ae1304ee422b3684cdbccf62defdd&=&format=webp&quality=lossless" alt="Ícone">
-                <img class="icon" src="https://media.discordapp.net/attachments/1316228294458212425/1327504407167766599/bibi.png?ex=67834e52&is=6781fcd2&hm=583e13698028695977cb95b3312f4342093335b95133217a477bef8779cdf2bb&=&format=webp&quality=lossless" alt="Ícone">
-            </div>
-            <button class="instagram-button" onclick="window.open('https://www.instagram.com/lwanafy/', '_blank')">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Ícone do Instagram">
-                Instagram
-            </button>
-        </div>
+    <div class="container" id="content">
+        <h1>by pr1nce</h1>
+        <a href="#" class="btn" onclick="applyTheme(event)">Clique aqui para ver</a>
     </div>
 
+    <!-- Áudio de clique -->
+    <audio id="click-sound" src="./projeto/assets/somsuave.mp3"></audio>
+
     <script>
-        const emojis = [
-            "https://media.discordapp.net/attachments/1316228294458212425/1327650644814725130/heart_that_ly.png?ex=6783d684&is=67828504&hm=76696ab96bd6c30f6725545b2913a63ede914d3c5b6ce3a852d90ae546e8b8aa&=&format=webp&quality=lossless",
-            "https://media.discordapp.net/attachments/1316228294458212425/1327650645251194902/hellokitty_flushed.png?ex=6783d684&is=67828504&hm=3356922603730cc97ad32c3b98aa3ae95878dafa5fbc3026c8c47bab798b8ff6&=&format=webp&quality=lossless",
-            "https://media.discordapp.net/attachments/1316228294458212425/1327650645896990822/HelloKittyBow.gif?ex=6783d684&is=67828504&hm=7a63f80e2376a0fd5a44e11890b9409e85e7407882a7c4fd7e10972f238a799c&=",
-            "https://media.discordapp.net/attachments/1316228294458212425/1327650643845976096/SanrioHearts.gif?ex=6783d684&is=67828504&hm=18872156a8b9016bcb3cec4aad71803f9ea8746846c12cdd69914d8c09d6d7c2&=",
-            "https://media.discordapp.net/attachments/1316228294458212425/1327650646987378802/hellokitty_hearteyes.png?ex=6783d684&is=67828504&hm=524fb4d8eb6fb3a1fa467a7a1e363f4e63bfef5dcdbd1ed052c610b238ae2a6d&=&format=webp&quality=lossless"
-        ];
+        // Função para criar borbulhas na posição do mouse
+        document.body.addEventListener('mousemove', (e) => {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            const size = Math.random() * 20 + 10; // Tamanhos variáveis das borbulhas
+            bubble.style.width = `${size}px`;
+            bubble.style.height = `${size}px`;
+            bubble.style.left = `${e.pageX}px`;
+            bubble.style.top = `${e.pageY}px`;
+            bubble.style.animationDuration = `${Math.random() * 2 + 3}s`;
 
-        function createFallingItem() {
-            const item = document.createElement('img');
-            item.src = emojis[Math.floor(Math.random() * emojis.length)];
-            item.classList.add('falling-item');
-            item.style.left = `${Math.random() * 100}vw`;
-            item.style.animationDuration = `${8 + Math.random() * 4}s`;
-            document.body.appendChild(item);
+            document.body.appendChild(bubble);
 
-            item.addEventListener('animationend', () => {
-                item.remove();
+            // Remover borbulha após a animação
+            setTimeout(() => {
+                bubble.remove();
+            }, 4000);
+        });
+
+        // Função para aplicar a transição de tema Hello Kitty e tocar som de clique
+        function applyTheme(event) {
+            event.preventDefault(); // Impede navegação imediata
+            const content = document.getElementById('content');
+            content.classList.add('hidden'); // Suaviza o desaparecimento
+            document.body.classList.add('hello-kitty-theme');
+
+            // Acessar o áudio e tocar
+            const clickSound = document.getElementById('click-sound');
+            clickSound.play().catch(error => {
+                console.error("Erro ao tentar tocar o áudio:", error);
             });
+
+            // Redirecionar para outra página após o efeito de transição
+            setTimeout(() => {
+                window.location.href = "cards.html"; // Redireciona após a transição
+            }, 2000); // Tempo para concluir a animação
         }
-
-        function createStar() {
-            const star = document.createElement('div');
-            star.classList.add('falling-item', 'star');
-            star.style.left = `${Math.random() * 100}vw`;
-            star.style.animationDuration = `${10 + Math.random() * 5}s`;
-            document.body.appendChild(star);
-
-            star.addEventListener('animationend', () => {
-                star.remove();
-            });
-        }
-
-        setInterval(createFallingItem, 2000);
-        setInterval(createStar, 3000);
     </script>
 </body>
 </html>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">

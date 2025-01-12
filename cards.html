@@ -16,10 +16,12 @@
             background-image: url('https://media.discordapp.net/attachments/1316228294458212425/1327654973969797130/10_New_Hello_Kitty_Pink_Background_FULL_HD_19201080_For_PC_Desktop.jpg?ex=6783da8c&is=6782890c&hm=2037db7e5ed749b12ff4b66ea0df04765b97db5b2c18863451f44c160b596054&=&format=webp');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             color: #fff;
             text-align: center;
             padding: 20px;
             overflow: hidden;
+            height: 100vh;
         }
 
         .cards-container {
@@ -236,46 +238,24 @@
     </div>
 
     <script>
+        // Para adicionar o efeito dos emojis caindo
         const emojis = [
-            "https://media.discordapp.net/attachments/1316228294458212425/1327534615950528512/Hello_kitty_face.png?ex=6784bbf4&is=67836a74&hm=6298d8126cb39408a7ef18f3a0076c1f3668b336e37b16c0b1fda3c7cd6d87a4&=&format=webp&quality=lossless&width=676&height=676",
-            "https://media.discordapp.net/attachments/1316228294458212425/1327650645251194902/hellokitty_flushed.png?ex=6783d684&is=67828504&hm=3356922603730cc97ad32c3b98aa3ae95878dafa5fbc3026c8c47bab798b8ff6&=&format=webp&quality=lossless",
-            "https://media.discordapp.net/attachments/1316228294458212425/1327650644814725130/heart_that_ly.png?ex=67852804&is=6783d684&hm=0bb065cadf32c4ecc8b5e4d30d972cdbee962e1fe354d3b632e12525134e9e9c&=&format=webp&quality=lossless",
-            "https://media.discordapp.net/attachments/1316228294458212425/1327650646987378802/hellokitty_hearteyes.png?ex=67852804&is=6783d684&hm=c5ec0b3d53d91feefc828c2cdb5ba56b81e0c1d8f06e8c0ec3920398ac4d7c0e&=&format=webp&quality=lossless",
-            "https://media.discordapp.net/attachments/1316228294458212425/1327650644814725130/heart_that_ly.png?ex=67852804&is=6783d684&hm=0bb065cadf32c4ecc8b5e4d30d972cdbee962e1fe354d3b632e12525134e9e9c&=&format=webp&quality=lossless"
+            "https://media.discordapp.net/attachments/1316228294458212425/1327534615950528512/Hello_kitty_face.png?ex=6784bbf4&is=67836a74&hm=6298d8126cb39408a7ef18f3a0076c1f3668b336e37b16c0b1fda3c7cd6d87a4&=&format=webp&quality=lossless"
         ];
 
-        function createFallingItem() {
-            const item = document.createElement('img');
-            item.src = emojis[Math.floor(Math.random() * emojis.length)];
-            item.classList.add('falling-item');
-            item.style.left = `${Math.random() * 100}vw`;
-            item.style.animationDuration = `${8 + Math.random() * 4}s`;
-            document.body.appendChild(item);
+        function createFallingEmoji() {
+            const emoji = document.createElement('img');
+            emoji.src = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.classList.add('falling-item');
+            emoji.style.left = `${Math.random() * window.innerWidth}px`;
+            document.body.appendChild(emoji);
 
-            item.addEventListener('animationend', () => {
-                item.remove();
-            });
+            setTimeout(() => {
+                emoji.remove();
+            }, 10000); // Remover após o final da animação
         }
 
-        function createStar() {
-            const star = document.createElement('div');
-            star.classList.add('falling-item', 'star');
-            star.style.left = `${Math.random() * 100}vw`;
-            star.style.animationDuration = `${10 + Math.random() * 5}s`;
-            document.body.appendChild(star);
-
-            star.addEventListener('animationend', () => {
-                star.remove();
-            });
-        }
-
-        setInterval(createFallingItem, 2000);
-        setInterval(createStar, 3000);
+        setInterval(createFallingEmoji, 500); // Adicionar um emoji caindo a cada 500ms
     </script>
 </body>
 </html>
-<body style="background-image: url('https://media.discordapp.net/attachments/1316228294458212425/1327654973969797130/10_New_Hello_Kitty_Pink_Background_FULL_HD_19201080_For_PC_Desktop.jpg?ex=67852c0c&is=6783da8c&hm=6452f06afacbbc8f9983c52b981fe0718f0f5a29232b8d045eb0d941e466df11&=&format=webp'); background-size: cover;">
-    <!-- Seu conteúdo aqui -->
-  </body>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-

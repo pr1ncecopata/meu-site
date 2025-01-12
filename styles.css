@@ -13,9 +13,9 @@ body {
     color: #fff;
     text-align: center;
     padding: 20px;
-    min-height: 100%; /* Garantir que o conteúdo ocupe toda a altura disponível */
+    min-height: 100vh; /* Faz com que a altura do body ocupe toda a tela */
     height: auto;
-    overflow-y: scroll; /* Habilita rolagem vertical */
+    overflow-y: auto; /* Habilita rolagem vertical */
     -webkit-overflow-scrolling: touch; /* Suporte para rolagem suave no iOS */
     overflow-x: hidden; /* Impede rolagem horizontal */
 }
@@ -23,6 +23,7 @@ body {
 /* Garantir que o html ocupe 100% da altura */
 html {
     height: 100%;
+    width: 100%;
 }
 
 /* Container principal */

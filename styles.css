@@ -72,8 +72,8 @@ header h1 {
 }
 
 .icon {
-    width: 40px;  /* Ajuste o tamanho do ícone conforme necessário */
-    height: 40px;
+    width: 15px;  /* Ajuste o tamanho do ícone conforme necessário */
+    height: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;

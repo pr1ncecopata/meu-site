@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+/* Garantir que o html ocupe 100% da altura */
+html {
+    height: 100%;
+    width: 100%;
+}
+
 /* Estilos gerais do body */
 body {
     font-family: 'Roboto', Arial, sans-serif;
@@ -18,12 +24,6 @@ body {
     overflow-y: auto; /* Habilita rolagem vertical */
     -webkit-overflow-scrolling: touch; /* Suporte para rolagem suave no iOS */
     overflow-x: hidden; /* Impede rolagem horizontal */
-}
-
-/* Garantir que o html ocupe 100% da altura */
-html {
-    height: 100%;
-    width: 100%;
 }
 
 /* Container principal */
